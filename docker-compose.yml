@@ -10,7 +10,7 @@ services:
     ports: 
     - 80:80
   db:
-    image: postgres
+    image: postgres:13.5
     restart: always
     environment:
       POSTGRES_PASSWORD: mypassword
@@ -19,7 +19,7 @@ services:
     ports:
       - 5432
   minha_app:
-    image: jacksonpires/minha-app-dockerizada:latest
+    image: evandercris/minha-app-dockerizada:latest
     build: .
     environment: 
       - ACTUAL_ENV=${ENV}
